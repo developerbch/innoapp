@@ -1,0 +1,39 @@
+type User {
+  id: ID!
+  userName: String!
+  email: String!
+  firstName: String
+  lastName: String
+  posts: [Post!]!
+  likes: [Like!]!
+  comments: [Comment!]!
+}
+
+type Post {
+  id: ID!
+  location: String!
+  caption: String!
+  user: User!
+  files: [File!]!
+  likes: [Like!]!
+  comments: [Comment!]!
+}
+
+type Like {
+  id: ID!
+  user: User!
+  post: Post!
+}
+
+type Comment {
+  id: ID!
+  text: String!
+  user: User!
+  post: Post!
+}
+
+type File {
+  id: ID!
+  url: String!
+  post: Post!
+}
