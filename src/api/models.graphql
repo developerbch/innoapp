@@ -7,6 +7,7 @@ type User {
   posts: [Post!]!
   likes: [Like!]!
   comments: [Comment!]!
+  loginSecret: String
 }
 
 type Post {
