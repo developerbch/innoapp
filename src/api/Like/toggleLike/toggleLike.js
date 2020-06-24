@@ -7,25 +7,27 @@ export default {
       isAuthenticated(request);
       const { postId } = args;
       const { user } = request;
+      const filterOptions = {
+        AND: [
+          {
+            user: {
+              id: user.id,
+            },
+          },
+          {
+            post: {
+              id: postId,
+            },
+          },
+        ],
+      };
       try {
-        const existingLike = await prisma.$exists.like({
-          AND: [
-            {
-              user: {
-                id: user.id,
-              },
-            },
-            {
-              post: {
-                id: postId,
-              },
-            },
-          ],
-        });
+        const existingLike = await prisma.$exists.like(filterOptions);
         if (existingLike) {
-          // TO DO 만약 좋아요가 존재한다면, 이걸 지워야하는게 필요한데, 나중에 할 거임
+          await prisma.deleteManyLikes(filterOptions); //좋아요가 있다면 좋아요 삭제
         } else {
           await prisma.createLike({
+            //좋아요가 없다면 좋아요 생성
             user: {
               connect: {
                 id: user.id,
