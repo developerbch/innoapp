@@ -3,10 +3,6 @@
 /**passport는 인증 관련한 모든 일을 함. JWT토큰이나 쿠키에서 정보를 가져와서 사용자 정보에 serialize(저장)함.
  * 토큰에서 정보를 가져와서 (express의) request에 붙여줌. 토큰을 가져와서 해독한 후에 사용자 객체를 request에 추가해줌. 이걸 자동으로 해줌. 물론 직접 수동으로 할 수도 있긴 함.
  * */
-import dotenv from "dotenv";
-import path from "path";
-dotenv.config({ path: path.resolve(__dirname, ".env") });
-
 import passport from "passport";
 import { Strategy, ExtractJwt } from "passport-jwt";
 import { prisma } from "../generated/prisma-client";
@@ -32,6 +28,14 @@ const verifyUser = async (payload, done) => {
   }
 };
 
+// 이건미들웨어 함수임. 그래서 req, res, next를 인자로 받음 //passport는 쿠키와 세션 작업을 하기에 좋음. 쿠키를 가져오고 만들어주고 모든 일을 함
+export const authenticateJwt = (req, res, next) =>
+  passport.authenticate("jwt", { sessions: false }, (error, user) => {
+    if (user) {
+      req.user = user;
+    }
+    next();
+  })(req, res, next); //이 함수에서는 apssport에 어떤 것도 입력되지 않기를 원해서 sessions: false 옵션을 추가함
+
 passport.use(new Strategy(jwtOptions, verifyUser)); //확인용 callback 함수도 추가해야됨. 옵션이 잘 맞게 적용되었을 때 JwtStrategy함수가 토큰을 해석할 것임
-//원하는 strategy를 사용한 후에, 원하는 함수를 입력하면 됨
-//예를 들어 github strategy 를 사용하면, 그 strategy 가 모든 작업을 한 후에 결과물을 payload에 전달해줌
+passport.initialize();
