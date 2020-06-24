@@ -24,10 +24,10 @@ const sendMail = (email) => {
 
 export const sendSecretMail = (address, secret) => {
   const email = {
-    from: "developchb@innogrid.com", //참고 : SendGrid Authenticate Your Domain에서 설정 후 DNS설정해야 아무 이메일로 변경 가능 //현재는 Single Sender Verification을 통해서 해당 메일만 되도록 설정함
+    from: "developchb@innogrid.com", //참고 : SendGrid Authenticate Your Domain에서 설정 후 DNS설정해야 아무 가짜이메일로도 변경 가능한듯 //현재는 Single Sender Verification을 통해서 해당 메일만 되도록 설정함
     to: address,
     subject: "🔒Login Secret for InnoApp🔒",
-    html: `안녕하세요! 로그인 비밀키는 다음과 같습니다.<br/><br/> ${secret}.<br/><br/> 로그인 하시려면 위 코드를 입력해주세요.`,
+    html: `안녕하세요! 로그인 비밀키는 다음과 같습니다.<br/><br/> <strong>${secret}</strong>.<br/><br/> 로그인 하시려면 위 코드를 입력해주세요.`,
   };
   return sendMail(email);
 };

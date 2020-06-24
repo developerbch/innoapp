@@ -5,9 +5,6 @@ dotenv.config({ path: path.resolve(__dirname, ".env") });
 import { GraphQLServer } from "graphql-yoga";
 import logger from "morgan";
 import schema from "./schema";
-import { sendSecretMail } from "./utils";
-
-sendSecretMail("developchb@innogrid.com", "로그인비밀키test"); //sendSecretMail 기능 테스트 //테스트 후 삭제!
 
 const PORT = process.env.PORT || 4000;
 
