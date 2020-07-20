@@ -3,7 +3,7 @@ export const COMMENT_FRAGMENT = `
         id
         text
         user {
-            username
+            userName
         }
     }
 `;
