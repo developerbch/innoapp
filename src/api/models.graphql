@@ -6,6 +6,7 @@ type User {
   lastName: String
   fullName: String
   amIFollowing: Boolean!
+  itsMe: Boolean!
   posts: [Post!]!
   likes: [Like!]!
   comments: [Comment!]!
@@ -43,6 +44,6 @@ type File {
 }
 
 type UserProfile {
-  user: User
+  user: User!
   potss: [Post!]!
 }
