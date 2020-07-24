@@ -20,3 +20,7 @@ Instagram clone with Express + Prisma + React and React Native
 - [ ] Upload a photo
 - [ ] Edit the photo (Delete)
 - [ ] See the feed
+- [ ] see rooms //내 room (DM방을 의미)
+- [ ] See room //모든 mesaage 받는 것
+- [ ] Send private Message
+- [ ] Receive Message (Realtime)
