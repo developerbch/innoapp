@@ -17,8 +17,8 @@ Instagram clone with Express + Prisma + React and React Native
 - [V] See user profile
 - [V] See MY profile
 - [V] See the full photo
-- [ ] Upload a photo
-- [ ] Edit the photo (Delete)
+- [V] Upload a photo
+- [V] Edit the photo (Delete)
 - [ ] See the feed
 - [ ] see rooms //내 room (DM방을 의미)
 - [ ] See room //모든 mesaage 받는 것

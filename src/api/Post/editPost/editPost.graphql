@@ -8,6 +8,6 @@ type Mutation {
     id: String!
     caption: String
     location: String
-    action: ACTIONS
+    action: ACTIONS!
   ): Post
 }
