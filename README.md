@@ -4,23 +4,23 @@ Instagram clone with Express + Prisma + React and React Native
 
 ## User Stories
 
-- [V] Create account
-- [V] Request Secret
-- [V] Confirm Secret (Login)
-- [V] Like / Unlike a photo
-- [V] Comment on a photo
-- [V] Search by user
-- [V] Search by location
-- [V] Follow User
-- [V] Unfollow User
-- [V] Edit my profile
-- [V] See user profile
-- [V] See MY profile
-- [V] See the full photo
-- [V] Upload a photo
-- [V] Edit the photo (Delete)
-- [V] See the feed
-- [ ] Send private Message
-- [V] see rooms //내 room (DM방을 의미)
+- [x] Create account
+- [x] Request Secret
+- [x] Confirm Secret (Login)
+- [x] Like / Unlike a photo
+- [x] Comment on a photo
+- [x] Search by user
+- [x] Search by location
+- [x] Follow User
+- [x] Unfollow User
+- [x] Edit my profile
+- [x] See user profile
+- [x] See MY profile
+- [x] See the full photo
+- [x] Upload a photo
+- [x] Edit the photo (Delete)
+- [x] See the feed
+- [x] Send private Message
+- [x] see rooms //내 room (DM방을 의미)
 - [ ] See room //모든 mesaage 받는 것
 - [ ] Receive Message (Realtime)
