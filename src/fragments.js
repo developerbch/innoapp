@@ -1,7 +1,7 @@
-// UserParts에 집중하지말고 User에만 집중하면된다. User는 datamodel에 있는거하고 같은 이름으로 해줘야한다.
 export const USER_FRAGMENT = `
     id
-    userName
+    username
+    avatar
 `;
 
 export const COMMENT_FRAGMENT = `
@@ -17,18 +17,29 @@ export const FILE_FRAGMENT = `
     url
 `;
 
+export const MESSAGE_FRAGMENT = `
+    id
+    text
+    to {
+        ${USER_FRAGMENT}
+    }
+    from {
+        ${USER_FRAGMENT}
+    }
+`;
+
 export const FULL_POST_FRAGMENT = `
     fragment PostParts on Post{
         id
         location
         caption
-        files{
+        files {
             ${FILE_FRAGMENT}
         }
-        comments{
+        comments {
             ${COMMENT_FRAGMENT}
         }
-        user{
+        user {
             ${USER_FRAGMENT}
         }
     }
@@ -38,7 +49,10 @@ export const ROOM_FRAGMENT = `
     fragment RoomParts on Room {
         id
         participants {
-            id
+            ${USER_FRAGMENT}
+        }
+        messages { 
+            ${MESSAGE_FRAGMENT}
         }
     }
 `;
