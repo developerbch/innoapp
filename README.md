@@ -23,4 +23,4 @@ Instagram clone with Express + Prisma + React and React Native
 - [x] Send private Message
 - [x] see rooms //내 room (DM방을 의미)
 - [x] See room //모든 mesaage 받는 것
-- [ ] Receive Message (Realtime)
+- [x] Receive Message (Realtime)
