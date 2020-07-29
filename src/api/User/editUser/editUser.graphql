@@ -2,8 +2,7 @@ type Mutation {
   editUser(
     userName: String
     email: String
-    firstName: String
-    lastName: String
+    name: String
     bio: String
     avatar: String
   ): User!

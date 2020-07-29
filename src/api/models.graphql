@@ -3,9 +3,7 @@ type User {
   avatar: String
   userName: String!
   email: String!
-  firstName: String
-  lastName: String
-  fullName: String
+  name: String
   isFollowing: Boolean!
   isSelf: Boolean!
   bio: String

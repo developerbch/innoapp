@@ -3,8 +3,7 @@ type User {
   avatar: String
   userName: String! @unique
   email: String! @unique
-  firstName: String @default(value: "")
-  lastName: String
+  name: String @default(value: "")
   bio: String
   following: [User!]! @relation(name: "FollowRelation")
   followers: [User!]! @relation(name: "FollowRelation")
