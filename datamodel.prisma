@@ -4,6 +4,12 @@ type User {
   userName: String! @unique
   email: String! @unique
   name: String @default(value: "")
+  sex: String!
+  birth: String!
+  phone: String! @unique
+  transportation: String!
+  userType:  String!
+  admin: Boolean! @default(value: false)
   bio: String
   following: [User!]! @relation(name: "FollowRelation")
   followers: [User!]! @relation(name: "FollowRelation")
