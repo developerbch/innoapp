@@ -8,8 +8,7 @@ type User {
   birth: String!
   phone: String! @unique
   transportation: String!
-  userType:  String!
-  admin: Boolean! @default(value: false)
+  userType: String!
   bio: String
   following: [User!]! @relation(name: "FollowRelation")
   followers: [User!]! @relation(name: "FollowRelation")

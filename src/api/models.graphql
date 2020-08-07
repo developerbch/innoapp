@@ -9,7 +9,6 @@ type User {
   phone: String!
   transportation: String!
   userType: String!
-  admin: Boolean!
   isFollowing: Boolean!
   isSelf: Boolean!
   bio: String
