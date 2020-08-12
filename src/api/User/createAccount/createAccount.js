@@ -14,6 +14,10 @@ export default {
         transportation,
         userType,
       } = args;
+      const exists = await prisma.$exists.user({ username });
+      if (exists) {
+        throw Error("This username is already taken");
+      }
       await prisma.createUser({
         userName,
         email,
