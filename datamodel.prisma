@@ -1,12 +1,12 @@
 type User {
   id: ID! @id
-  avatar: String
-  userName: String! @unique
+  avatar: String @default(value:"https://cdn.pixabay.com/photo/2013/07/13/12/07/avatar-159236_960_720.png")
+  userName: String! 
   email: String! @unique
   name: String @default(value: "")
   sex: String!
   birth: String!
-  phone: String! @unique
+  phone: String!
   transportation: String!
   userType: String!
   bio: String
