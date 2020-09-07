@@ -5,6 +5,7 @@ import schema from "./schema";
 import "./passport";
 import { authenticateJwt } from "./passport";
 import { isAuthenticated } from "./middlewares";
+import { uploadController, uploadMiddleware } from "./upload";
 
 const PORT = process.env.PORT || 4000;
 
@@ -15,7 +16,7 @@ const server = new GraphQLServer({
 
 server.express.use(logger("dev")); //express 서버에서 logger 미들웨어를 사용. 사실은 morgan 모듈이지! dev라는 옵션을 줌
 server.express.use(authenticateJwt);
-
+server.express.post("/api/upload", uploadMiddleware, uploadController);
 server.start({ port: PORT }, () =>
   console.log(`Server running on  http://localhost:${PORT}`)
 );
