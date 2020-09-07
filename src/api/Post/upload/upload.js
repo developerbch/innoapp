@@ -5,10 +5,11 @@ export default {
     upload: async (_, args, { request, isAuthenticated }) => {
       isAuthenticated(request);
       const { user } = request; //request에서 user를 받아옴
-      const { caption, location, files } = args; //우리 앱은 위치가 필수여서 nomadcoders강의와는 다르게 datamodel.prisma에서도 필수로 해놨고, 여기도 동일하게 기입하도록 만듦
+      const { caption, location, files, uploadDate } = args; //우리 앱은 위치가 필수여서 nomadcoders강의와는 다르게 datamodel.prisma에서도 필수로 해놨고, 여기도 동일하게 기입하도록 만듦
       const post = await prisma.createPost({
         caption,
         location,
+        uploadDate,
         user: { connect: { id: user.id } },
       });
       files.forEach(
