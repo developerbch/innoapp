@@ -3,6 +3,8 @@ type Mutation {
     caption: String!
     location: String!
     uploadDate: String
+    latitude: Float
+    longitude: Float
     files: [String!]!
   ): Post!
 }

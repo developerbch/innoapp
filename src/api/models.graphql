@@ -30,6 +30,8 @@ type Post {
   location: String!
   caption: String!
   uploadDate: String
+  latitude: Float
+  longitude: Float
   user: User!
   files: [File!]!
   likes: [Like!]!
