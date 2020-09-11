@@ -32,6 +32,7 @@ type Post {
   uploadDate: String
   latitude: Float
   longitude: Float
+  obstacle: String
   user: User!
   files: [File!]!
   likes: [Like!]!
