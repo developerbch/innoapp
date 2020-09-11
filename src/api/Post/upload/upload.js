@@ -12,6 +12,7 @@ export default {
         uploadDate,
         latitude,
         longitude,
+        obstacle,
       } = args; //우리 앱은 위치가 필수여서 nomadcoders강의와는 다르게 datamodel.prisma에서도 필수로 해놨고, 여기도 동일하게 기입하도록 만듦
       const post = await prisma.createPost({
         caption,
@@ -19,6 +20,7 @@ export default {
         uploadDate,
         latitude,
         longitude,
+        obstacle,
         user: { connect: { id: user.id } },
       });
       files.forEach(

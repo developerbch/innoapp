@@ -5,6 +5,7 @@ type Mutation {
     uploadDate: String
     latitude: Float
     longitude: Float
+    obstacle: String
     files: [String!]!
   ): Post!
 }
