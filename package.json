@@ -12,6 +12,7 @@
     "@babel/preset-env": "^7.10.3",
     "@babel/runtime": "^7.11.2",
     "aws-sdk": "^2.742.0",
+    "copy": "^0.3.2",
     "dotenv": "^8.2.0",
     "graphql-tools": "^6.0.10",
     "graphql-yoga": "^1.18.3",
@@ -35,6 +36,8 @@
     "generate": "prisma generate",
     "prisma": "yarn run deploy && yarn run generate",
     "dev": "nodemon --exec babel-node src/server.js",
-    "build": "babel src -d build"
+    "build": "babel src -d build",
+    "postbuild": "yarn copy ./src/api/**/*.graphql ./build/api/",
+    "start": "node build/server.js"
   }
 }
